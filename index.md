@@ -75,6 +75,9 @@ run:RUN
     xc.ChangeName(string uname)//更换名字
     xc.Restart()//重启机器人
     xc.SetHeader(string url)//设置头像
+    bot.AddObject(string name,object obj)//添加一个全局变量
+    bot.GetObject(string name)//返回对应的全局变量
+    bot.RemoveObject(string name)//移除一个全局变量
 	
     
 ```
