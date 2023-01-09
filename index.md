@@ -28,6 +28,30 @@
 
 - "baseCommand/ChatFunc"     用户发送事件，当有用户发送的时候会执行里面的js文件(对象为data_chat)
 
+UserAddFunc例子:
+
+```js
+//UserAddFunc/UserLeftFunc目录下面的只需申明Exports和Exports.run就可以
+function RUN(x){
+xc.SendMsg(`欢迎${x.nick} 进入聊天室。`);
+}
+Exports={
+run:RUN
+};
+```
+UserLeftFunc例子:
+```js
+//UserAddFunc/UserLeftFunc目录下面的只需申明Exports和Exports.run就可以
+function RUN(x){
+xc.SendMsg(`${x.nick} 离开了聊天室。`);
+}
+Exports={
+run:RUN
+};
+```
+
+
+
 #### 注意:
 
 如果在**hook**目录下面**创建js**请重写：**OnMessage,OnOpen,OnError,OnClose事件**，否则将**导致机器人异常**！
@@ -176,13 +200,7 @@
   
   **run**(主函数)、**name**(命令的名字)、**help**(命令帮助)
   
-  2.Run函数必须**return**，否则可能会**报错**。
-  
-  3.本框架调用主函数时会传入一个**data_chat**对象，如果想获取**用户的信息**可看上面的说明。
-  
-  
-  
-  
+  2.本框架调用主函数时会传入一个**data_chat**对象，如果想获取**用户的信息**可看上面的说明。
   
   
 
